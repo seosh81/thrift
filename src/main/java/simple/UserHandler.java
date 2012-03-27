@@ -33,13 +33,9 @@ public class UserHandler implements UserService.Iface {
 			user = (User) sqlMap
 					.queryForObject("userSvc.getUser", id);
 			System.out.println("delete count " + sqlMap.update("userSvc.deleteUser", user.getId()));
-			Thread.sleep(10000);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} 
 		System.out.println(user);
 		return user;
 	}
